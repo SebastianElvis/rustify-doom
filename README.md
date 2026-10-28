@@ -16,11 +16,14 @@ The Rustify Doom track defines the reference and the scorer: [`eval/open/doom`](
 
 ## Layout
 
-| Folder | Contents |
+| Path | Contents |
 | --- | --- |
-| `recovered/` | The traceability ledger, the specifications, the architecture, the evidence, and the declarative tests. |
-| `implementation/` | The Rust project, its tests, the Rust design, and the decision records. |
-| `verification/` | The check results, the comparisons with the original, and the parity gate result. |
+| `Cargo.toml`, `src/`, `tests/` | The Rust game and its tests. |
+| `docs/` | The Rust design and the decision records. |
+| `COMPATIBILITY.md` | The measured parity with the original binary and the open gaps. |
+
+The repository does not include the Rustify working files.
+Rustify keeps the recovered specifications, the evidence, and the raw comparison reports in its own project folder.
 
 ## Run
 
