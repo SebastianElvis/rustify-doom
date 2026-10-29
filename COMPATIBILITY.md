@@ -35,8 +35,8 @@ The scorer cases were not an input to the Rustify agent.
 | `upstream-demo3` | 1 | 1 |
 | `upstream-demo4` | 2 | 0 |
 
-Most failed cases have different savegame files.
-The other failures are one memory option, one episode 4 demo, and one deathmatch net demo.
+19 of 20 failed cases differ in the written files. Each of these cases writes savegames.
+The other failed case, `memory/mb-1`, differs in its steps.
 The scorer cannot capture frames on its host.
 The renderer, the menus, the status bar, the automap, the cheats, the controls, the window, and the screenshot therefore need manual checks.
 
