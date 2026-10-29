@@ -1,0 +1,21 @@
+[package]
+name = "doom"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[[bin]]
+name = "doom"
+path = "src/main.rs"
+
+[dependencies]
+
+[profile.release]
+opt-level = 3
+debug = false
+overflow-checks = false
+panic = "abort"
+
+[profile.dev]
+opt-level = 1
+overflow-checks = false

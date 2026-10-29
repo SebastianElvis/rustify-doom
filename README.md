@@ -5,7 +5,8 @@ This repository holds a Rust reconstruction of Doom.
 
 ## Status
 
-The reconstruction is in progress.
+The game runs and matches the original in every recorded scenario.
+It does not have full parity yet. [COMPATIBILITY.md](COMPATIBILITY.md) gives the measured result and the open gaps.
 The Rustify Doom track defines the reference and the scorer: [`eval/open/doom`](https://github.com/SebastianElvis/rustify/tree/main/eval/open/doom).
 
 ## Reference
@@ -18,18 +19,32 @@ The Rustify Doom track defines the reference and the scorer: [`eval/open/doom`](
 
 | Path | Contents |
 | --- | --- |
-| `Cargo.toml`, `src/`, `tests/` | The Rust game and its tests. |
+| `Cargo.toml`, `build.rs`, `src/` | The Rust game and its unit tests. |
 | `docs/` | The Rust design and the decision records. |
 | `COMPATIBILITY.md` | The measured parity with the original binary and the open gaps. |
 
 The repository does not include the Rustify working files.
 Rustify keeps the recovered specifications, the evidence, and the raw comparison reports in its own project folder.
+The design and the decision records use requirement IDs (`REQ-`), component IDs (`C-`), and gap IDs (`GAP-`) from that folder.
 
-## Run
+## Build and run
+
+The build needs macOS on Apple silicon, Rust, and the Homebrew `sdl2-compat` package.
+The original binary links the same library, so `build.rs` uses the Homebrew path.
+
+```sh
+brew install sdl2-compat
+cargo build --release
+cargo test
+```
 
 The repository does not include game data.
-Download `freedoom1.wad` from [Freedoom](https://freedoom.github.io/).
-Give its path with `-iwad`.
+Download `freedoom1.wad` from the [Freedoom 0.13.0 release](https://github.com/freedoom/freedoom/releases/tag/v0.13.0).
+Give its path with `-iwad`:
+
+```sh
+target/release/doom -iwad freedoom1.wad
+```
 
 ## License
 
